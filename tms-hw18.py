@@ -45,8 +45,9 @@ def add():
     return render_template('add.html')
 
 
+database_path = os.path.join(os.getcwd(), 'products.db')
+db = SQLiteDataBase(database_path)
+table = 'products'
+
 if __name__ == '__main__':
-    database_path = os.path.join(os.getcwd(), 'products.db')
-    db = SQLiteDataBase(database_path)
-    table = 'products'
     app.run()
